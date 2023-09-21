@@ -27,5 +27,14 @@ body {
   line-height: 1.5;
   background-color: var(--color-black);
   color: var(--color-white);
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.swiper-slide {
+  width: auto !important;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
 }
