@@ -74,6 +74,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      
       <HeroImage />
       {/* {topAlbumsData.map((item) => {
         return (
