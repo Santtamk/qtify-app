@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Section.module.css';
 import { Box, CircularProgress } from '@mui/material';
 import Card from '../Card/Card';
@@ -6,18 +6,22 @@ import Carousel from '../Carousel/Carousel';
 import BasicTabs from '../Tabs/Tabs';
 
 
-const Section = ({title, data, type, filteredData=null, filteredDataValues=[], toggle=false, handleToggle=null, value=0, handleChange=null }) => {
+const Section = ({title, data, type, filteredData=null, filteredDataValues=[] , value=0, handleChange = null }) => {
     // const [carouselToggle, setCarouselToggle] = useState(true)
     // const handleToggle = () => {
     //     setCarouselToggle(!carouselToggle);
     // }
+    const [toggle, setToggle] = useState(false)
+     const handleToggle = () => {
+    setToggle(!toggle);
+  }
 
   return (
     <div>
         <div className={styles.header}>
             <h3>{title}</h3>
             <h4 className={styles.toggleText} onClick={handleToggle}>
-                {!toggle?"Show All" : 'Collapse All'}
+                {!toggle?"Show All" : "Collapse All"}
             </h4>
         </div>
 
@@ -40,7 +44,6 @@ const Section = ({title, data, type, filteredData=null, filteredDataValues=[], t
                     <Carousel data={filteredDataValues} component={(data) => <Card  data={data} type={type}/>}/>
                 )}
                  </div>
-                 
         }
     </div>
   )

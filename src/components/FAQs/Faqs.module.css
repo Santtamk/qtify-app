@@ -12,7 +12,7 @@
 }
 
 .accordionStart{
-    background-color: var(--color-black);
+    background-color: var(--color-black) !important;
     color:  var(--color-white);
     /* border-radius: 10px; */
     border: 1px solid #FFFFFF;
@@ -21,6 +21,8 @@
 .accordionTypo{
     border-color: var(--color-white);
     border-radius: 0px, 10px, 10px, 0px;
+    background-color: var(--color-black);
+    color: var(--color-white);
 }
 .accordionDetails{
    color:  var(--color-black);
@@ -28,7 +30,7 @@
    border-radius: 0px, 10px, 10px, 0px;
 }
 
-.customAccordionSummary .MuiSvgIcon-root {
+/* .customAccordionSummary .MuiSvgIcon-root {
     color: var(--color-primary);
-}
+} */
 

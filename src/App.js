@@ -10,12 +10,13 @@ function App() {
   const [data, setData] = useState([])
   const [songsData, setSongsData] = useState([])
   const [filteredDataValues, setFilteredDataValues] = useState([])
-  const [toggle, setToggle] = useState(false)
+  // const [toggle, setToggle] = useState(false)
   const [value, setValue] = useState(0)
 
-  const handleToggle = () => {
-    setToggle(!toggle);
-  }
+  
+  // const handleToggle = () => {
+  //   setToggle(!toggle);
+  // }
   const handleChange = (event, newValue) => {
     setValue(newValue);
   }
@@ -42,13 +43,13 @@ function App() {
   }, [value])
   
   
-  const generateData = async() => {
+  async function generateData() {
 
-    try{
+    try {
       const data = await fetchTopAlbums();
       setData(data);
-    }catch(err){
-      console.err(err)
+    } catch (err) {
+      console.err(err);
     }
   }
 
@@ -74,18 +75,14 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      
+
       <HeroImage />
-      {/* {topAlbumsData.map((item) => {
-        return (
-          <Card key={item.id} data={item} type='album'/>
-        )
-      })} */}
+    
       <div className='section'>
-        <Section data={data} type='album' title='Top Albums' filteredDataValues={data}/>
-        <Section data={data} type='album' title='New Albums' filteredDataValues={data}/>
+        <Section data={data} type='album' title='Top Albums' filteredDataValues={data} handleChange={handleChange}/>
+        <Section data={data} type='album' title='New Albums' filteredDataValues={data} handleChange={handleChange}/>
         <div className='final-section'>
-          <Section data={songsData} className='final-section' type='song'title='Songs' filteredData={filteredData} filteredDataValues={filteredDataValues} value={value} handleChange={handleChange} handleToggle={handleToggle}/>
+          <Section data={songsData} className='final-section' type='song' title='Songs' filteredData={filteredData} filteredDataValues={filteredDataValues} value={value} handleChange={handleChange}/>
         </div>
       </div>
       <div>

@@ -19,15 +19,16 @@ export default function BasicAccordion() {
         <Accordion className={styles.accordionStart}>
             <AccordionSummary
             expandIcon={<ExpandMoreIcon style={{ color: '#34C94B' }}/>}
+            className={styles.accordionStart}
             aria-controls="panel1a-content"
             id="panel1a-header"
             >
-            <Typography className={styles.accordionTypo}>Is QTify free to use?</Typography>
+              <Typography className={styles.accordionTypo}>Is QTify free to use?</Typography>
             </AccordionSummary>
             <AccordionDetails className={styles.accordionDetails}>
-            <Typography>
-            Yes! It is 100% free, and has 0% ads!
-            </Typography>
+              <Typography>
+              Yes! It is 100% free, and has 0% ads!
+              </Typography>
             </AccordionDetails>
         </Accordion>
         <Accordion  className={styles.accordionStart}>
@@ -36,12 +37,12 @@ export default function BasicAccordion() {
             aria-controls="panel2a-content"
             id="panel2a-header"
             >
-            <Typography className={styles.accordionTypo}>Can I download and listen to songs online?</Typography>
+              <Typography className={styles.accordionTypo}>Can I download and listen to songs online?</Typography>
             </AccordionSummary>
             <AccordionDetails className={styles.accordionDetails}>
-            <Typography>
-            Sorry, unfortunately we don't provide the service to download any songs.
-            </Typography>
+              <Typography >
+              Sorry, unfortunately we don't provide the service to download any songs.
+              </Typography>
             </AccordionDetails>
         </Accordion>
       </div>
